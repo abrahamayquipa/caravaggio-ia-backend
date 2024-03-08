@@ -27,7 +27,8 @@ const textGenerator = async (prompt) => {
 
 app.get('/text-generator', async (req, res) => {
     const textPrompt = req.query.prompt;
-    const textResponse = await textGenerator(textPrompt);
+    const decodePrompt = decodeURIComponent(textPrompt);
+    const textResponse = await textGenerator(decodePrompt);
     res.send(textResponse);
 });
 
@@ -44,6 +45,7 @@ const imageGenerator = async (prompt) => {
 
 app.get('/image-generator', async (req, res) => {
     const imagePrompt = req.query.prompt;
-    const imageUrl = await imageGenerator(imagePrompt);
+    const decodePrompt = decodeURIComponent(imagePrompt);
+    const imageUrl = await imageGenerator(decodePrompt);
     res.send(imageUrl);
 });
