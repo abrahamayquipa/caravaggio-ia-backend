@@ -23,6 +23,4 @@ app.get('/text-generator', async (req, res) => {
     res.json(textResponse);
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
+export default app;
