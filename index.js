@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import productsRouter from './generator.js';
+import generator from './generator.js';
 
 const app = express();
 
 app.use(cors());
 
-app.use('/api', productsRouter);
+app.use('/api', generator);
 
 const port = process.env.PORT || 4000;
 
